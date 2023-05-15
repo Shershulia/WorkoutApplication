@@ -1,13 +1,12 @@
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
 
-const BmrForm: FC = () => {
+const BmrForm: FC = ( {goBack, sendBMR }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     function handleSubmitting(formValues: Object) {
-        console.log(formValues);
+        sendBMR(formValues);
     }
-
     return (
         <div className="h-[50%] min-w-[30%]">
             <form onSubmit={handleSubmit(handleSubmitting)} className='shadow-[0px_0px_30px_10px_#dd6b20] rounded-2xl p-12 flex flex-col align-middle h-full justify-around'>
@@ -44,7 +43,16 @@ const BmrForm: FC = () => {
                         <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 text-xl">
                             Submit
                         </span>
-                        </button>
+                    </button>
+                    <button
+                        onClick={goBack}
+                        className="max-w-xs relative inline-flex items-center justify-center p-0.5 mt-5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-500 to-gray-900 group-hover:from-red-500 group-hover:to-gray-900 hover:text-white
+                        dark:text-white focus:ring-4 focus:outline-none focus:ring-red-400 dark:focus:ring-pink-800 "                        
+                        >          
+                        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 text-xl">
+                            Choose gender
+                        </span>
+                    </button>
                 </div>
             </form>
         </div>
