@@ -1,11 +1,16 @@
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
+import {IBMR} from "../models/IBMR";
 
-const BmrForm: FC = ( {goBack, sendBMR }) => {
+interface Props {
+    sendBMR: (bmrReady: IBMR) => void;
+    goBack : () =>void;
+}
+const BmrForm: FC<Props> = ( {goBack, sendBMR }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     function handleSubmitting(formValues: Object) {
-        sendBMR(formValues);
+        sendBMR(formValues as IBMR);
     }
     return (
         <div className="h-[50%] min-w-[30%]">
