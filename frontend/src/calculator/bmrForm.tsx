@@ -21,7 +21,7 @@ const BmrForm: FC<Props> = ( {goBack, sendBMR }) => {
                         {...register("weight", { required: true, min: 0 })}
                         className={`appearance-none px-4 py-1 border ${errors.weight ? 'border-red-500 animate-pulse bg-red-50' : 'border-gray-300'} text-center max-w-xs rounded-lg`}
                         />
-                    {errors.weight && <span className="text-red-500 text-center">Weight is required and should be greater than or equal to 0</span>}
+                    {errors.weight && <span className="text-red-500 text-center mt-2">Weight is required and should be greater than or equal to 0</span>}
                 </section>
                 <section className='flex flex-col items-center justify-center'>
                     <label className='mb-2 text-xl'>Enter your height in cm</label>
