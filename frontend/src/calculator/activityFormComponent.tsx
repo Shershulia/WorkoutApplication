@@ -1,6 +1,10 @@
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
+interface Props {
+    onMessage: (message: number) => void;
+    goBack : () =>void;
 
-const ActivityFormComponent = () => {
+}
+const ActivityFormComponent: FC<Props>  = ({ onMessage, goBack }) => {
     const [activity,setActivity] = useState<number>(1.1);
 
     const changeTDII= (activity : number) : void =>{
@@ -10,6 +14,9 @@ const ActivityFormComponent = () => {
         const value = parseFloat(event.target.value);
         setActivity(value);
       };
+    const submitTdee = () : void =>{
+        onMessage(activity);
+    }
       
     return (
         <div>
@@ -142,6 +149,7 @@ const ActivityFormComponent = () => {
             <div className='flex flex-col items-center justify-center'>
                     <button
                         type="submit"
+                        onClick={submitTdee}
                         className="max-w-xs relative inline-flex items-center justify-center p-0.5 mt-5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white
                         dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 "                        
                         >          
@@ -150,6 +158,7 @@ const ActivityFormComponent = () => {
                         </span>
                     </button>
                     <button
+                        onClick={goBack}
                         className="max-w-xs relative inline-flex items-center justify-center p-0.5 mt-5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-500 to-gray-900 group-hover:from-red-500 group-hover:to-gray-900 hover:text-white
                         dark:text-white focus:ring-4 focus:outline-none focus:ring-red-400 dark:focus:ring-pink-800 "                        
                         >          
