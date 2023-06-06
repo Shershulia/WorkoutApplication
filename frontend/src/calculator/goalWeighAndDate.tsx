@@ -2,6 +2,7 @@ import React, {FC, useState} from 'react';
 import {useForm} from "react-hook-form";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import {IGoalWeight} from "../models/IGoalWeight";
 
 interface Props {
     sendDateAndWeight: (goalWeight: number, goalDate: Date) => void;
@@ -10,13 +11,14 @@ interface Props {
 }
 const GoalWeighAndDate: FC<Props>  = ( {sendDateAndWeight, goBack})  => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const [startDate, setStartDate] = useState(new Date());
+    const [startDate, setStartDate] = useState<Date>(new Date());
 
     const minDate = new Date();
     minDate.setDate(minDate.getDate() + 2); // Add 2 days to today's date
     const handleSubmitting= (formValues: Object) =>{
+        const form = formValues as IGoalWeight;
         console.log("Sending");
-        sendDateAndWeight(formValues.goalWeight, startDate);
+        sendDateAndWeight(form.goalWeight, startDate);
     }
     return (
         <div>
@@ -32,7 +34,7 @@ const GoalWeighAndDate: FC<Props>  = ( {sendDateAndWeight, goBack})  => {
                 <section className='flex flex-col items-center justify-center'>
                     <label className='mb-2 text-xl'>Enter your goal time</label>
                     <DatePicker selected={minDate}
-                                onChange={(date) => setStartDate(date)}
+                                onChange={(date) => setStartDate(date ===null ? new Date(): date)}
                                 minDate={minDate}
                                 className="border border-gray-300 rounded px-4 py-2 text-xxl text-gray-700 text-center "
                     />
