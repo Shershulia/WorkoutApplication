@@ -14,7 +14,7 @@ const GoalWeighAndDate: FC<Props>  = ( {sendDateAndWeight, goBack , skip})  => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const minDate = new Date();
     minDate.setDate(minDate.getDate() + 2); // Add 2 days to today's date
-    
+
     const [startDate, setStartDate] = useState<Date>(minDate);
 
     const handleSubmitting= (formValues: Object) =>{
@@ -36,7 +36,7 @@ const GoalWeighAndDate: FC<Props>  = ( {sendDateAndWeight, goBack , skip})  => {
                 <section className='flex flex-col items-center justify-center'>
                     <label className='mb-2 text-xl'>Enter your goal time</label>
                     <DatePicker selected={startDate}
-                                onChange={(date) => setStartDate(date)}
+                                onChange={(date : Date) => setStartDate(date)}
                                 minDate={minDate}
                                 className="border border-gray-300 rounded px-4 py-2 text-xxl text-gray-700 text-center "
                     />

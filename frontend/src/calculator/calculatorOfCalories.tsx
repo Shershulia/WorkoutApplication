@@ -43,7 +43,10 @@ const CalculatorOfCalories: FC = () => {
     const getGoalDateAndWeight= (goalWeight:number, goalDate:Date) : void =>{
         setGoalWeight(goalWeight - weight);
         const temporary = new Date();
-        setGoalDate(goalDate.getDate() - temporary.getDate());
+        // @ts-ignore
+        const diffTime = Math.abs(goalDate - temporary);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        setGoalDate(diffDays);
     }
 
     const goToTdee = () => {
