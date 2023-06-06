@@ -64,4 +64,4 @@ const BmrForm: FC<Props> = ( {goBack, sendBMR }) => {
     );
 };
 
-export default BmrForm;
+export default React.memo(BmrForm);

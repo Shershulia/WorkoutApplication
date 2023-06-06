@@ -174,4 +174,4 @@ const ActivityFormComponent: FC<Props>  = ({ onMessage, goBack }) => {
     );
 };
 
-export default ActivityFormComponent;
+export default React.memo(ActivityFormComponent);
