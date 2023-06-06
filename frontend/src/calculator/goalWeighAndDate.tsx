@@ -7,9 +7,10 @@ import {IGoalWeight} from "../models/IGoalWeight";
 interface Props {
     sendDateAndWeight: (goalWeight: number, goalDate: Date) => void;
     goBack : () =>void;
+    skip : () => void;
 
 }
-const GoalWeighAndDate: FC<Props>  = ( {sendDateAndWeight, goBack})  => {
+const GoalWeighAndDate: FC<Props>  = ( {sendDateAndWeight, goBack , skip})  => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [startDate, setStartDate] = useState<Date>(new Date());
 
@@ -48,6 +49,16 @@ const GoalWeighAndDate: FC<Props>  = ( {sendDateAndWeight, goBack})  => {
                         <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 text-xl">
                             Submit
                         </span>
+                    </button>
+                    <button
+                        type="reset"
+                        onClick={skip}
+                        className="max-w-xs relative inline-flex items-center justify-center p-0.5 mt-5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-500 to-gray-400 group-hover:from-blue-500 group-hover:to-gray-400 hover:text-white
+                        dark:text-white focus:ring-4 focus:outline-none "
+                    >
+                        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 text-xl">
+                        Skip
+                      </span>
                     </button>
                     <button
                         type="reset"
