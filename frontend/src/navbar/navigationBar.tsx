@@ -10,9 +10,11 @@ const NavigationBar = () => {
 
     return (
         <div>
-            <div className="flex fixed w-full z-20 top-0 left-0 border-b border-gray-200 justify-center items-center bg-orange-500 text-gray-900">
-                <div className="flex items-center justify-center">
-                    <img src="assets/TTGlogo.png" className="h-24 max-w-xs" onClick={editNavBar}/>
+            <div className="flex fixed w-full z-20 top-0 left-0 border-b border-gray-200 justify-center items-center bg-orange-500 text-gray-900 duration-300">
+                <div className="flex items-center justify-center duration-300">
+                    <img src="assets/TTGlogo.png" className={`h-24 max-w-xs transition duration-300 ease-in-out ${
+                            !showNavBar ? ' ' : '-translate-x-full'
+                        }`} onClick={editNavBar}/>
                 </div>
                 <nav
                     className={`flex flex-row justify-center items-center bg-orange-500 text-gray-900 ${
@@ -44,18 +46,19 @@ const NavigationBar = () => {
             </div>
             <style>
                 {`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
+                    @keyframes fade-in {
+                        from {
+                        opacity: 0;
+                        }
+                        to {
+                        opacity: 1;
+                        }
+                    }
+                    .animate-fade-in {
+                        animation: fade-in 0.5s ease-in-out;
+                    }
 
-        .animate-fade-in {
-          animation: fade-in 0.5s ease-in-out;
-        }
+                   
         `}
             </style>
         </div>
