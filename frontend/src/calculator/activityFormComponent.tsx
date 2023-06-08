@@ -146,7 +146,16 @@ const ActivityFormComponent: FC<Props>  = ({ onMessage, goBack }) => {
                 />
                 <h2>Chosen value TDEE: {activity}</h2>   
             </div>
-            <div className='flex flex-col items-center justify-center'>
+            <div className='flex flex-row items-center justify-center space-x-2'>
+                    <button
+                        onClick={goBack}
+                        className="max-w-xs relative inline-flex items-center justify-center p-0.5 mt-5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-500 to-gray-900 group-hover:from-red-500 group-hover:to-gray-900 hover:text-white
+                            dark:text-white focus:ring-4 focus:outline-none focus:ring-red-400 dark:focus:ring-pink-800 "
+                    >
+                            <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 text-xl">
+                                Back
+                            </span>
+                    </button>
                     <button
                         type="submit"
                         onClick={submitTdee}
@@ -157,15 +166,7 @@ const ActivityFormComponent: FC<Props>  = ({ onMessage, goBack }) => {
                             Submit
                         </span>
                     </button>
-                    <button
-                        onClick={goBack}
-                        className="max-w-xs relative inline-flex items-center justify-center p-0.5 mt-5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-500 to-gray-900 group-hover:from-red-500 group-hover:to-gray-900 hover:text-white
-                        dark:text-white focus:ring-4 focus:outline-none focus:ring-red-400 dark:focus:ring-pink-800 "                        
-                        >          
-                        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 text-xl">
-                            Back
-                        </span>
-                    </button>
+
                 </div> 
             </div>
 

@@ -39,7 +39,16 @@ const BmrForm: FC<Props> = ( {goBack, sendBMR }) => {
                     />
                     {errors.age && <span className="text-red-500 text-center">Age is required and should be between 0 and 99</span>}
                 </section>
-                <div className='flex flex-col items-center justify-center'>
+                <div className='flex flex-row items-center justify-center space-x-2'>
+                    <button
+                        onClick={goBack}
+                        className="max-w-xs relative inline-flex items-center justify-center p-0.5 mt-5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-500 to-gray-900 group-hover:from-red-500 group-hover:to-gray-900 hover:text-white
+                        dark:text-white focus:ring-4 focus:outline-none focus:ring-red-400 dark:focus:ring-pink-800 "
+                    >
+                        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 text-xl">
+                            Back
+                        </span>
+                    </button>
                     <button
                         type="submit"
                         className="max-w-xs relative inline-flex items-center justify-center p-0.5 mt-5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white
@@ -47,15 +56,6 @@ const BmrForm: FC<Props> = ( {goBack, sendBMR }) => {
                         >          
                         <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 text-xl">
                             Submit
-                        </span>
-                    </button>
-                    <button
-                        onClick={goBack}
-                        className="max-w-xs relative inline-flex items-center justify-center p-0.5 mt-5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-500 to-gray-900 group-hover:from-red-500 group-hover:to-gray-900 hover:text-white
-                        dark:text-white focus:ring-4 focus:outline-none focus:ring-red-400 dark:focus:ring-pink-800 "                        
-                        >          
-                        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 text-xl">
-                            Choose gender
                         </span>
                     </button>
                 </div>
