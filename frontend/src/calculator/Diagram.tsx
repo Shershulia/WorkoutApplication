@@ -22,7 +22,7 @@ const Diagram:FC<Props> = ({protein,carbs,fats}) => {
     const newData = {
         labels: ["Protein","Carbs","Fats"],
         datasets:[{
-            label: "Macro",
+            label: "%",
             data:[protein,carbs,fats],
             backgroundColor: ["blue","red","yellow"],
             borderColor:["blue","red","yellow"]
