@@ -19,6 +19,7 @@ const ResultPage: FC<IResult> = ({ bmr, tdee, weighDifference, goalDate, reset }
     const [isH23Visible, setIsH23Visible] = useState<boolean>(false);
     const [openMacrosCalc, setOpenMacrosCalc] = useState<boolean>(false);
 
+
     const handleDivClick = () => {
         setIsH2Visible(!isH2Visible);
     };
@@ -60,7 +61,7 @@ const ResultPage: FC<IResult> = ({ bmr, tdee, weighDifference, goalDate, reset }
                     >This is the number of calories you should consume per day in order to achieve your weight goal.</h2>
                 </div>}
         
-            {openMacrosCalc && <MicronutriciosCalc/>}
+            {openMacrosCalc && <MicronutriciosCalc tdee={tdee_calories}/>}
             <div className='flex flex-col items-center'>
                 <button
                     type="reset"
@@ -69,7 +70,7 @@ const ResultPage: FC<IResult> = ({ bmr, tdee, weighDifference, goalDate, reset }
                         dark:text-white focus:ring-4 focus:outline-none "
                 >
                         <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 text-xl">
-                        Open macros
+                        {!openMacrosCalc ? "Open macros" : "Close macros"}
                       </span>
                 </button>
             </div>

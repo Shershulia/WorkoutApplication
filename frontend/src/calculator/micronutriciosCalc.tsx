@@ -1,9 +1,9 @@
 import React, {FC, useState} from 'react';
 import Diagram from "./Diagram";
 interface Props{
-
+    tdee : number;
 }
-const MicronutriciosCalc : FC<Props> = () => {
+const MicronutriciosCalc : FC<Props> = ({tdee}) => {
 
     const [goal,setGoal] = useState<string>("");
     const [protein, setProtein] = useState<number>(30);
@@ -106,7 +106,18 @@ const MicronutriciosCalc : FC<Props> = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="text-center flex flex-row justify-between mt-5">
+                <div>
+                    <a>Your protein intake {(protein*0.01*tdee/4).toFixed(1)} gr/day</a>
                 </div>
+                <div>
+                    <a>Your carbs intake {(carbs*0.01*tdee/4).toFixed(1)} gr/day</a>
+                </div>
+                <div>
+                    <a>Your fat intake {(fats*0.01*tdee/9).toFixed(1)} gr/day</a>
+                </div>
+            </div>
         </div>
     );
 };
