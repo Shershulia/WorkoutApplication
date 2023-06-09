@@ -21,16 +21,16 @@ const NavigationBar = () => {
                         showNavBar ? 'block' : 'hidden'
                     } animate-fade-in`}
                 >
-                    <a className="mx-16 text-gray-900 px-16 py-9 hover:bg-orange-700" href="/#">
+                    <a className="mx-16 text-gray-900 px-16 py-9 hover:bg-orange-700" href="/">
                         Home
                     </a>
-                    <a className="mx-16 text-gray-900 px-16 py-9 hover:bg-orange-700" href="/#">
-                        Calculator
+                    <a className="mx-16 text-gray-900 px-16 py-9 hover:bg-orange-700" href="/myAccount">
+                        My account
                     </a>
-                    <a className="mx-16 text-gray-900 px-16 py-9 hover:bg-orange-700" href="/#">
+                    <a className="mx-16 text-gray-900 px-16 py-9 hover:bg-orange-700" href="/exercises">
                         Exercises
                     </a>
-                    <a className="mx-16 text-gray-900 px-16 py-9 hover:bg-orange-700" href="/#">
+                    <a className="mx-16 text-gray-900 px-16 py-9 hover:bg-orange-700" href="/mycal">
                         My calories intake
                     </a>
                 </nav>
