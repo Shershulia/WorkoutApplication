@@ -10,7 +10,7 @@ const NavigationBar = () => {
 
     return (
         <div>
-            <div className="flex fixed w-full z-20 top-0 left-0 border-b border-gray-200 justify-center items-center bg-orange-500 text-gray-900 duration-300">
+            <div className="flex fixed w-full max-h-24 top-0 left-0 border-b border-gray-200 justify-center items-center bg-orange-500 text-gray-900 duration-300">
                 <div className="flex items-center justify-center duration-300">
                     <img src="assets/TTGlogo.png" className={`h-24 max-w-xs transition duration-300 ease-in-out ${
                             !showNavBar ? ' ' : '-translate-x-full'
